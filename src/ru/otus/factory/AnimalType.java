@@ -1,7 +1,5 @@
 package ru.otus.factory;
 
-import ru.otus.animals.Animal;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,11 +9,11 @@ public enum AnimalType {
     DOG,
     DUCK;
 
-    public static List<String> VALUES = collectValues();
+    public static final List<String> VALUES = collectValues();
 
     private static List<String> collectValues() {
         List<String> result = new ArrayList<>();
-        for (AnimalType type: AnimalType.values()) {
+        for (AnimalType type : AnimalType.values()) {
             result.add(type.name());
         }
         return result;

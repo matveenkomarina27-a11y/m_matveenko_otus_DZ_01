@@ -81,4 +81,4 @@ public abstract class Animal {
         }
         return "лет";
     }
-    }
+}

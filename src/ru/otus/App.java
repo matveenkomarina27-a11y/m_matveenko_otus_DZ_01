@@ -6,7 +6,6 @@ import ru.otus.animals.birds.Flying;
 import ru.otus.factory.AnimalFactory;
 import ru.otus.factory.AnimalType;
 
-import javax.lang.model.element.Name;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,6 +13,7 @@ import java.util.Scanner;
 public class App {
 
     private static final Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         List<Animal> animals = new ArrayList<>();
         AnimalFactory factory = new AnimalFactory();
@@ -25,9 +25,9 @@ public class App {
                 if (animals.isEmpty()) {
                     System.out.println("Список пуст");
                 }
-              for (Animal animal : animals) {
-                  System.out.println(animal);
-              }
+                for (Animal animal : animals) {
+                    System.out.println(animal);
+                }
             } else if (currentCommand == Command.ADD) {
                 AnimalType animalType = askForAnimalType();
                 Animal animal = factory.create(animalType);
@@ -39,7 +39,7 @@ public class App {
                 animal.say();
                 tryToFly(animal);
             }
-        }while (currentCommand != Command.EXIT);
+        } while (currentCommand != Command.EXIT);
     }
 
     private static Command askForCommand() {
@@ -75,7 +75,7 @@ public class App {
                 if (input <= 0) {
                     System.out.println("Введен неверный возраст, попробуйте ещё раз");
                 }
-            }catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Ввод не является числом, попробуйте еще раз");
             }
         } while (input <= 0);
@@ -103,7 +103,7 @@ public class App {
                 if (input <= 0) {
                     System.out.println("Вес должен быть положительным числом, попробуйте ещё раз");
                 }
-            }catch (NumberFormatException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Ввод не является числом, попробуйте еще раз");
             }
         } while (input <= 0);

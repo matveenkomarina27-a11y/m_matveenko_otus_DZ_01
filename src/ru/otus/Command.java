@@ -13,7 +13,7 @@ public enum Command {
 
     private static List<String> collectValues() {
         List<String> result = new ArrayList<>();
-        for (Command type: Command.values()) {
+        for (Command type : Command.values()) {
             result.add(type.name());
         }
         return result;
